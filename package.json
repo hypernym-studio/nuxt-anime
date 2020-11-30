@@ -1,0 +1,58 @@
+{
+  "name": "nuxt-animejs",
+  "version": "1.0.0",
+  "description": "Anime.js module for Nuxt.js",
+  "license": "MIT",
+  "author": "Ivo Dolenc",
+  "contributors": [
+    {
+      "name": "Ivo Dolenc <ivodolenc@gmail.com>"
+    }
+  ],
+  "main": "lib/module.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivodolenc/nuxt-animejs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ivodolenc/nuxt-animejs/issues"
+  },
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "nuxt",
+    "nuxtjs",
+    "nuxt-module",
+    "anime",
+    "animejs",
+    "nuxt-anime",
+    "nuxt-animejs",
+    "nuxt-animations",
+    "javascript-animations"
+  ],
+  "scripts": {
+    "release": "standard-version && git push --follow-tags && yarn publish",
+    "lint:eslint": "eslint --ext .js .",
+    "lint:all:eslint": "yarn lint:eslint --fix"
+  },
+  "dependencies": {
+    "animejs": "latest"
+  },
+  "devDependencies": {
+    "@babel/core": "latest",
+    "@babel/preset-env": "latest",
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
+    "@nuxtjs/eslint-config": "latest",
+    "babel-eslint": "latest",
+    "eslint": "latest",
+    "eslint-config-prettier": "latest",
+    "husky": "latest",
+    "prettier": "latest",
+    "standard-version": "latest"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
