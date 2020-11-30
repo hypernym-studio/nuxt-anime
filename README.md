@@ -29,6 +29,8 @@ export default {
 
 💻 Here are some code examples
 
+[Page Transitions](https://codesandbox.io/s/example-nuxt-animejs-basic-zdgey)
+
 **Nuxt global page transitions**
 
 ```js
