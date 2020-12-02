@@ -1,3 +1,7 @@
+<p align="center">
+    <img src=".github/media/cover.svg" >
+</p>
+
 <h1>Nuxt Animejs Module</h1>
 
 Anime.js module for Nuxt.js
@@ -5,6 +9,8 @@ Anime.js module for Nuxt.js
 ## Features
 
 - Helps you integrate `Anime.js` javascript animation library
+- Allows you to easily animate elements via custom `v-anime` directive 🔥
+- Provides a solution for global use via `this.$anime`
 - Includes `zero-config` setup ready to go
 
 ## Setup
@@ -49,6 +55,25 @@ export default {
   </h1>
 </template>
 ```
+
+**Custom modifier: `v-anime.set`**
+
+```html
+<!-- index.vue -->
+
+<template>
+  <h2
+    v-anime.set="{
+        color: '#2f495e',
+        backgroundColor: '#00c58e',
+      }"
+  >
+    NUXT ANIMEJS
+  </h2>
+</template>
+```
+
+[More info](https://animejs.com/documentation/#set)
 
 **Hello world**
 
@@ -166,6 +191,10 @@ anime({
 
 ```html
 <div v-anime="{ /* ... */ }"></div>
+```
+
+```html
+<div v-anime.set="{ /* ... */ }"></div>
 ```
 
 [More info](https://animejs.com/documentation/)

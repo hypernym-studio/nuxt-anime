@@ -10,6 +10,14 @@
     >
       NUXT ANIMEJS
     </h1>
+    <h2
+      v-anime.set="{
+        color: '#2f495e',
+        backgroundColor: '#00c58e'
+      }"
+    >
+      NUXT ANIMEJS
+    </h2>
   </div>
 </template>
 
