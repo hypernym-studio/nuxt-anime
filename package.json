@@ -9,7 +9,7 @@
       "name": "Ivo Dolenc <ivodolenc@gmail.com>"
     }
   ],
-  "main": "lib/module.js",
+  "main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ivodolenc/nuxt-animejs.git"
@@ -18,7 +18,8 @@
     "url": "https://github.com/ivodolenc/nuxt-animejs/issues"
   },
   "files": [
-    "lib"
+    "src",
+    "templates"
   ],
   "keywords": [
     "nuxt",
@@ -32,12 +33,12 @@
     "javascript-animations"
   ],
   "scripts": {
-    "release": "standard-version && git push --follow-tags && yarn publish",
+    "release": "standard-version && git push --follow-tags && npm publish",
     "lint:eslint": "eslint --ext .js .",
     "lint:all:eslint": "yarn lint:eslint --fix"
   },
   "dependencies": {
-    "animejs": "latest"
+    "animejs": "^3.2.1"
   },
   "devDependencies": {
     "@babel/core": "latest",
