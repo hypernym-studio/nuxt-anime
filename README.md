@@ -31,6 +31,51 @@ export default {
 
 [Page Transitions](https://codesandbox.io/s/example-nuxt-animejs-basic-zdgey)
 
+**Custom directive: `v-anime`**
+
+```html
+<!-- index.vue -->
+
+<template>
+  <h1
+    v-anime="{
+        rotate: 360,
+        backgroundColor: ['#2f495e', '#00c58e'],
+        duration: 3000,
+        loop: true,
+      }"
+  >
+    NUXT ANIMEJS
+  </h1>
+</template>
+```
+
+**Hello world**
+
+```js
+// index.vue
+
+export default {
+  mounted() {
+    this.helloWorld()
+  },
+
+  methods: {
+    helloWorld() {
+      const anime = this.$anime
+
+      anime({
+        targets: 'div',
+        translateX: 250,
+        rotate: '1turn',
+        backgroundColor: '#FFF',
+        duration: 800
+      })
+    }
+  }
+}
+```
+
 **Nuxt global page transitions**
 
 ```js
@@ -69,32 +114,6 @@ export default {
         duration: 500,
         easing: 'easeInOutSine',
         complete: done
-      })
-    }
-  }
-}
-```
-
-**Hello World**
-
-```js
-// index.vue
-
-export default {
-  mounted() {
-    this.helloWorld()
-  },
-
-  methods: {
-    helloWorld() {
-      const anime = this.$anime
-
-      anime({
-        targets: 'div',
-        translateX: 250,
-        rotate: '1turn',
-        backgroundColor: '#FFF',
-        duration: 800
       })
     }
   }
@@ -143,6 +162,10 @@ const anime = this.$anime
 anime({
   /* ... */
 })
+```
+
+```html
+<div v-anime="{ /* ... */ }"></div>
 ```
 
 [More info](https://animejs.com/documentation/)
