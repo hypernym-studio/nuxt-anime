@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/ivodolenc/nuxt-animejs/compare/v1.1.1...v1.2.0) (2020-12-02)
+
+
+### Features
+
+* add 'v-anime.set' modifier ([19b2658](https://github.com/ivodolenc/nuxt-animejs/commit/19b26587753132b3103b189cd38b3bdba2343942))
+
 ### [1.1.1](https://github.com/ivodolenc/nuxt-animejs/compare/v1.1.0...v1.1.1) (2020-12-02)
 
 
