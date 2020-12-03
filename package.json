@@ -1,6 +1,6 @@
 {
   "name": "nuxt-animejs",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Anime.js module for Nuxt.js",
   "license": "MIT",
   "author": "Ivo Dolenc",
