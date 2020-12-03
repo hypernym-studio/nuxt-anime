@@ -1,5 +1,5 @@
 <p align="center">
-    <img src=".github/media/cover.svg" >
+    <img src=".github/assets/cover.svg" >
 </p>
 
 <h1>Nuxt Animejs Module</h1>
