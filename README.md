@@ -11,9 +11,9 @@ Anime.js module for Nuxt.js
 - Helps you integrate `Anime.js` javascript animation library
 - Allows you to easily animate elements via custom `v-anime` directive 🔥
 - Provides a solution for global use via `this.$anime`
-- Includes `zero-config` setup ready to go
+- `Zero-config` setup ready for development 🚀
 
-## Setup
+## Quick Start
 
 1. Add `nuxt-animejs` dependency to your project
 
@@ -30,6 +30,8 @@ export default {
   buildModules: ['nuxt-animejs']
 }
 ```
+
+That's it! Start developing your app ✨
 
 ## Examples
 
@@ -90,7 +92,38 @@ export default {
       const anime = this.$anime
 
       anime({
-        targets: 'div',
+        targets: '.element',
+        translateX: 250,
+        rotate: '1turn',
+        backgroundColor: '#FFF',
+        duration: 800
+      })
+    }
+  }
+}
+```
+
+**Animate element on click**
+
+```html
+<!-- index.vue -->
+
+<template>
+  <div>
+    <button @click="animeEl">Click me</button>
+    <p class="p1">Nuxt Animejs Module</p>
+  </div>
+</template>
+```
+
+```js
+// index.vue
+
+export default {
+  methods: {
+    animeEl() {
+      this.$anime({
+        targets: '.p1',
         translateX: 250,
         rotate: '1turn',
         backgroundColor: '#FFF',
@@ -161,9 +194,7 @@ export default {
 
 - Default: `true`
 
-Anime.js is enabled by default so there is no need for additional configuration.
-
-> Available on both `client-side` and `server-side`
+✅ Anime.js is enabled by default so there is no need for additional configuration.
 
 ```js
 // nuxt.config.js
@@ -177,6 +208,8 @@ Anime.js is enabled by default so there is no need for additional configuration.
 }
 ```
 
+**Available globally**
+
 ```js
 // Access Anime.js by using
 this.$anime
@@ -188,6 +221,8 @@ anime({
   /* ... */
 })
 ```
+
+**Use in templates**
 
 ```html
 <div v-anime="{ /* ... */ }"></div>
