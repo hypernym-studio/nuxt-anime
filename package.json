@@ -25,33 +25,30 @@
     "nuxt",
     "nuxtjs",
     "nuxt-module",
-    "anime",
-    "animejs",
-    "nuxt-anime",
     "nuxt-animejs",
+    "nuxt-animejs-module",
     "nuxt-animations",
-    "javascript-animations"
+    "animejs-module",
+    "animations",
+    "animejs"
   ],
   "scripts": {
     "release": "standard-version && git push --follow-tags && npm publish",
     "lint:eslint": "eslint --ext .js .",
-    "lint:all:eslint": "yarn lint:eslint --fix"
+    "lint:fix:eslint": "yarn lint:eslint --fix"
   },
   "dependencies": {
     "animejs": "^3.2.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "^12.1.4",
-    "@commitlint/config-conventional": "^12.1.4",
-    "@nuxtjs/eslint-config": "^6.0.0",
+    "@commitlint/cli": "^13.2.0",
+    "@commitlint/config-conventional": "^13.2.0",
+    "@nuxtjs/eslint-config": "^6.0.1",
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.27.0",
+    "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
-    "husky": "^6.0.0",
-    "prettier": "^2.3.0",
-    "standard-version": "^9.3.0"
-  },
-  "publishConfig": {
-    "access": "public"
+    "husky": "^7.0.2",
+    "prettier": "^2.4.1",
+    "standard-version": "^9.3.1"
   }
 }
