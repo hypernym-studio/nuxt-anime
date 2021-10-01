@@ -2,15 +2,13 @@ import Vue from 'vue'
 import anime from 'animejs'
 
 Vue.directive('anime', (el, binding) => {
-  let options = { targets: el, ...binding.value }
-  const modifiers = binding.modifiers
+  anime({ targets: el, ...binding.value })
 
-  anime(options)
-
-  if (modifiers.set) {
-    options = { ...binding.value }
-    anime.set(el, options)
+  if (binding.modifiers.set) {
+    anime.set(el, { ...binding.value })
   }
 })
 
-Vue.prototype.$anime = anime
+export default ({ app }, inject) => {
+  inject('anime', anime)
+}
