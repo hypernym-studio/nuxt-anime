@@ -6,13 +6,14 @@ module.exports = {
     node: true
   },
 
+  parser: '@babel/eslint-parser',
   parserOptions: {
-    parser: 'babel-eslint',
     sourceType: 'module',
-    ecmaVersion: 2020
+    ecmaVersion: 2020,
+    requireConfigFile: false
   },
 
-  extends: ['@nuxtjs', 'eslint-config-prettier'],
+  extends: ['eslint-config-prettier'],
 
   rules: {
     'no-debugger': 'warn',
@@ -21,16 +22,9 @@ module.exports = {
     'vue/html-self-closing': 'off',
     'vue/html-indent': 'off',
 
+    'vue/max-attributes-per-line': 'off',
+    'vue/html-closing-bracket-newline': 'off',
     'vue/multiline-html-element-content-newline': 'off',
-    'vue/singleline-html-element-content-newline': 'off',
-
-    'vue/component-name-in-template-casing': [
-      'error',
-      'PascalCase',
-      {
-        registeredComponentsOnly: false,
-        ignores: ['transition', 'transition-group']
-      }
-    ]
+    'vue/singleline-html-element-content-newline': 'off'
   }
 }
