@@ -1,5 +1,5 @@
 <p align="center">
-    <img src=".github/assets/cover.svg" >
+    <img src=".github/assets/cover22.svg" >
 </p>
 
 <h1>Nuxt Animejs Module</h1>
@@ -231,8 +231,8 @@ Here are all the `default` options that can be used for customization:
 ```js
 // nuxt.config.js
 
-{
-  animejs: true,
+export default {
+  animejs: true
 }
 ```
 
@@ -245,7 +245,7 @@ Anime.js is `enabled` by default so there is no need for additional configuratio
 ```js
 // nuxt.config.js
 
-{
+export default {
   buildModules: ['nuxt-animejs'],
 
   /**
