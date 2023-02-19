@@ -2,7 +2,7 @@
 
 <p align="center">Anime.js module for Nuxt.</p>
 
-<h6 align="center">Currently compatible with Nuxt 2.</h6>
+<h6 align="center">Currently compatible with Nuxt 2. <a href="https://github.com/ivodolenc/nuxt-animejs/discussions/10">More info →</a></h6>
 
 ## Features
 
