@@ -1,10 +1,8 @@
-<p align="center">
-    <img src=".github/assets/cover22.svg" >
-</p>
+<h1 align="center">Nuxt Animejs</h1>
 
-<h1>Nuxt Animejs Module</h1>
+<p align="center">Anime.js module for Nuxt.</p>
 
-Anime.js module for Nuxt.js
+<h6 align="center">Currently compatible with Nuxt 2.</h6>
 
 ## Features
 

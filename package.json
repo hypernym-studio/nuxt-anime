@@ -30,21 +30,21 @@
   ],
   "scripts": {
     "release": "standard-version && git push --follow-tags && npm publish",
-    "lint:eslint": "eslint --ext .js .",
-    "lint:fix:eslint": "yarn lint:eslint --fix"
+    "format": "prettier --write .",
+    "lint": "eslint .",
+    "fix": "eslint --fix ."
   },
   "dependencies": {
     "animejs": "^3.2.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.2",
-    "@babel/eslint-parser": "^7.18.2",
-    "@commitlint/cli": "^17.0.2",
-    "@commitlint/config-conventional": "^17.0.2",
-    "eslint": "^8.17.0",
-    "eslint-config-prettier": "^8.5.0",
-    "husky": "^8.0.1",
-    "prettier": "^2.6.2",
+    "eslint": "^8.34.0",
+    "eslint-config-prettier": "^8.6.0",
+    "prettier": "^2.8.4",
     "standard-version": "^9.5.0"
-  }
+  },
+  "eslintConfig": {
+    "extends": "./.config/eslint.config.cjs"
+  },
+  "prettier": "./.config/prettier.config.cjs"
 }
