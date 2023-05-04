@@ -1,47 +1,64 @@
 {
-  "name": "nuxt-animejs",
-  "version": "1.2.5",
-  "description": "Anime.js module for Nuxt.js",
-  "author": "Ivo Dolenc",
+  "name": "@hypernym/nuxt-anime",
+  "version": "2.0.0",
+  "author": "Hypernym Studio",
+  "description": "Anime module for Nuxt.",
   "license": "MIT",
-  "homepage": "https://github.com/ivodolenc/nuxt-animejs",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ivodolenc/nuxt-animejs.git"
+  "repository": "hypernym-studio/nuxt-anime",
+  "homepage": "https://github.com/hypernym-studio/nuxt-anime",
+  "type": "module",
+  "main": "./dist/module.mjs",
+  "types": "./dist/types.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/module.mjs",
+      "types": "./dist/types.d.ts"
+    }
   },
-  "bugs": {
-    "url": "https://github.com/ivodolenc/nuxt-animejs/issues"
-  },
-  "main": "src/index.js",
   "files": [
-    "src",
-    "templates"
+    "dist",
+    "!dist/module.cjs"
   ],
   "keywords": [
     "nuxt",
-    "nuxtjs",
-    "nuxt-module",
+    "nuxt-anime",
     "nuxt-animejs",
-    "nuxt-animejs-module",
+    "nuxt-module",
+    "anime-module",
     "nuxt-animations",
-    "animejs-module",
+    "nuxt-anime-module",
     "animations",
-    "animejs"
+    "animejs",
+    "anime"
   ],
   "scripts": {
-    "release": "standard-version && git push --follow-tags && npm publish",
+    "dev": "nuxt dev playground",
+    "build:module": "nuxt-module-build",
+    "build:play": "nuxt build playground",
+    "generate:play": "nuxt generate playground",
+    "preview:play": "nuxt preview playground",
+    "prepublishOnly": "npm run build:module",
     "format": "prettier --write .",
     "lint": "eslint .",
     "fix": "eslint --fix ."
   },
   "dependencies": {
+    "@types/animejs": "^3.1.7",
     "animejs": "^3.2.1"
   },
   "devDependencies": {
-    "eslint": "^8.34.0",
-    "eslint-config-prettier": "^8.6.0",
-    "prettier": "^2.8.4",
-    "standard-version": "^9.5.0"
+    "@nuxt/module-builder": "^0.3.1",
+    "@types/node": "^18.16.3",
+    "@typescript-eslint/eslint-plugin": "^5.59.2",
+    "@typescript-eslint/parser": "^5.59.2",
+    "eslint": "^8.39.0",
+    "eslint-config-prettier": "^8.8.0",
+    "nuxt": "^3.4.3",
+    "prettier": "^2.8.8",
+    "typescript": "^5.0.4"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "eslintConfig": {
     "extends": "./.config/eslint.config.cjs"
