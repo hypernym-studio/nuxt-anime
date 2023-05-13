@@ -54,29 +54,6 @@ The module comes with a _zero-config_ setup so after activation it automatically
 </script>
 ```
 
-## `useAnime` Composabele
-
-The module also provides a `useAnime` composable function that can be used in any component.
-
-```html
-<template>
-  <div>
-    <h1 class="title">Nuxt Anime</h1>
-  </div>
-</template>
-
-<script setup lang="ts">
-  onMounted(() => {
-    useAnime({
-      targets: '.title',
-      translateY: [-10, 0],
-      opacity: [0, 1],
-      duration: 2000
-    })
-  })
-</script>
-```
-
 ## Options
 
 The module currently has no additional options because they are not needed.
