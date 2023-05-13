@@ -27,9 +27,6 @@ export default defineNuxtModule<AnimeModuleOptions>({
     const { resolve } = createResolver(import.meta.url)
     nuxt.options.build.transpile.push(resolve('./runtime'))
 
-    // add plugin that provides `$anime` function to nuxt app instance
-    addPlugin(resolve('./runtime/plugin'))
-
     // add useAnime composable if user opts in
     if (nuxt.options.anime?.composable || options.composable) {
       addImports({
@@ -37,6 +34,10 @@ export default defineNuxtModule<AnimeModuleOptions>({
         as: 'useAnime',
         name: 'default'
       })
+    } else {
+      // add plugin that provides `$anime` function to nuxt app instance
+      // Only add this if the user opts out of the composable
+      addPlugin(resolve('./runtime/plugin'))
     }
   }
 }) satisfies NuxtModule<AnimeModuleOptions>
