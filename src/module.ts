@@ -4,40 +4,36 @@ import {
   addPlugin,
   addImports
 } from '@nuxt/kit'
-import { name, version } from '../package.json'
-import { type NuxtModule } from 'nuxt/schema'
+import { name, version, configKey } from '../package.json'
+import type { ModuleOptions } from './types'
 
-export interface AnimeModuleOptions {
-  composable: false
-}
+export * from './types'
 
-export default defineNuxtModule<AnimeModuleOptions>({
+export default defineNuxtModule<ModuleOptions>({
   meta: {
     name,
     version,
-    configKey: 'anime',
+    configKey,
     compatibility: {
       nuxt: '>=3.0.0'
     }
   },
+
   defaults: {
-    composable: false
+    provide: true,
+    autoImport: true
   },
+
   setup(options, nuxt) {
+    const { provide, composables, autoImport } = options
+
     const { resolve } = createResolver(import.meta.url)
+    const composablesImport = resolve('./runtime/composables')
     nuxt.options.build.transpile.push(resolve('./runtime'))
 
-    // add useAnime composable if user opts in
-    if (nuxt.options.anime?.composable || options.composable) {
-      addImports({
-        from: 'animejs/lib/anime.es.js',
-        as: 'useAnime',
-        name: 'default'
-      })
-    } else {
-      // add plugin that provides `$anime` function to nuxt app instance
-      // Only add this if the user opts out of the composable
-      addPlugin(resolve('./runtime/plugin'))
-    }
+    if (provide) addPlugin(resolve('./runtime/plugin'))
+    if (composables) nuxt.options.alias['#anime'] = composablesImport
+    if (autoImport && composables)
+      addImports([{ name: 'useAnime', from: composablesImport }])
   }
-}) satisfies NuxtModule<AnimeModuleOptions>
+})
