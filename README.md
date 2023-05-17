@@ -5,7 +5,8 @@ Anime module for Nuxt.
 ## Features
 
 - Helps you integrate the Anime.js animation library
-- Provides a solution for global use
+- Provides the main _anime_ helper globally
+- Supports custom composables
 - Zero-config setup ready to go
 - TypeScript friendly
 - Super easy to use
@@ -32,8 +33,6 @@ That's it! Start developing your app!
 
 ## Module
 
-Nuxt Anime Module is completely rewritten in TypeScript. It also improves the development experience with detailed descriptions, examples and code auto-completion.
-
 The module comes with a _zero-config_ setup so after activation it automatically adds the Anime.js core and it is globally available without additional settings.
 
 ```html
@@ -56,29 +55,102 @@ The module comes with a _zero-config_ setup so after activation it automatically
 
 ## Options
 
-The module currently has no additional options because they are not needed.
-
-### Anime Core
-
-- Default: `true`
-
-Anime core is enabled by default on module activation.
+Nuxt Anime Module is optimized and supports Nuxt 3 with TypeScript. It also improves the development experience with detailed descriptions, examples and code auto-completion.
 
 ```ts
 // nuxt.config.ts
 
 {
   modules: ['@hypernym/nuxt-anime'],
+
+  anime: {
+    // Module options
+  }
+}
+```
+
+## Provide
+
+- Type: `boolean`
+- Default: `true`
+
+Provides the main `$anime` helper globally.
+
+```ts
+// nuxt.config.ts
+
+{
+  anime: {
+    provide: true
+  }
 }
 ```
 
 **Available globally**
 
 ```ts
-// Access Anime by using
 const { $anime } = useNuxtApp()
 
-$anime({ targets: '.title', translateX: 250, duration: 800 })
+$anime({ targets: '.class', translateX: 250, duration: 800 })
+```
+
+## Composables
+
+- Type: `boolean`
+- Default: `undefined`
+
+Specifies custom composables.
+
+If enabled, allows the use of custom composables.
+
+```ts
+// nuxt.config.ts
+
+{
+  anime: {
+    composables: true
+  }
+}
+```
+
+### useAnime
+
+Provides the main `anime` function as custom composable.
+
+```html
+<script setup lang="ts">
+  onMounted(() => {
+    useAnime({ targets: '.class', translateX: 250, duration: 800 })
+  })
+</script>
+```
+
+```ts
+// Explicit import (optional)
+import { useAnime } from '#anime'
+```
+
+## Auto Import
+
+- Type: `boolean`
+- Default: `true`
+
+Specifies the `auto-import` feature.
+
+If enabled, the composables will be available globally so there is no need to import them manually.
+
+Since this is an opinionated feature, you can disable global `auto-import` and use explicit import only where you need it.
+
+Works only if the `composables: true` option is enabled.
+
+```ts
+// nuxt.config.ts
+
+{
+  anime: {
+    autoImport: false
+  }
+}
 ```
 
 ## Community
