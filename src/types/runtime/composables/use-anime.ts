@@ -18,4 +18,4 @@ import anime from 'animejs'
  *
  * @since 2.1.0
  */
-export const useAnime: typeof anime = anime
+export declare const useAnime: typeof anime
