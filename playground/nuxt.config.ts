@@ -4,5 +4,5 @@ import Module from '../src/module'
 export default defineNuxtConfig({
   telemetry: false,
 
-  modules: [Module]
+  modules: [Module],
 })
