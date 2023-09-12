@@ -1,8 +1,5 @@
-/**
- * Module Options
- *
- * @since 2.1.0
- */
+import type { NuxtModule } from '@nuxt/schema'
+
 export interface ModuleOptions {
   /**
    * Provides the main `$anime` helper globally.
@@ -46,25 +43,6 @@ export interface ModuleOptions {
   autoImport?: boolean
 }
 
-declare module '@nuxt/schema' {
-  interface NuxtConfig {
-    /**
-     * Nuxt Anime Module
-     *
-     * Anime module for Nuxt.
-     *
-     * @see [Repository](https://github.com/hypernym-studio/nuxt-anime)
-     */
-    anime?: ModuleOptions
-  }
-  interface NuxtOptions {
-    /**
-     * Nuxt Anime Module
-     *
-     * Anime module for Nuxt.
-     *
-     * @see [Repository](https://github.com/hypernym-studio/nuxt-anime)
-     */
-    anime?: ModuleOptions
-  }
-}
+declare const module: NuxtModule<ModuleOptions>
+
+export { module as default }
