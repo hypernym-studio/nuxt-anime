@@ -17,6 +17,9 @@ Anime module for Nuxt.
 
 ```sh
 npm i -D @hypernym/nuxt-anime
+
+# or via nuxi
+npx nuxi@latest module add animejs
 ```
 
 2. Enable the module in the main config file
